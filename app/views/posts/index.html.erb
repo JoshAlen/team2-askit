@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <% @posts.each do |post| %>
+        <div class="post-preview">
+          <a href="posts/<%= post.id %>">
+            <h2 class="post-title">
+              <%= post.title %>
+            </h2>
+            <h3 class="post-subtitle">
+              <%= truncate(post.content) %>
+            </h3>
+          </a>
+          <p class="post-meta">Posted by <%= post.name %> on <%= post.created_at.to_formatted_s(:long_ordinal) %></p>
+        </div>
+        <hr>
+      <% end %>
+      <div class="clearfix">
+        <a class="btn btn-primary float-right" href="#">TOP</a>
+      </div>
+    </div>
+  </div>
+</div>
