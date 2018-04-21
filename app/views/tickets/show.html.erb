@@ -4,18 +4,33 @@
   <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
     		<p id="notice"><%= notice %></p>
-           <div class="post-preview">
+        
+        <div class="post-preview">
             <h2 class="post-title">
-                <%= @ticket.ticket_type %>
+                Ticket Title: <%= @ticket.ticket_type %>
             </h2>
             <h3 class="post-subtitle">
               
             </h3>
           </a>
-          <p style="word-wrap: break-word;" class="post-meta"> <%= word_wrap(@ticket.ticket_description, line_width: 8) %></p>
+          <p style="word-wrap: break-word;" class="post-meta">Ticket description: <%= word_wrap(@ticket.ticket_description, line_width: 8) %></p>
         </div>
+        <div class="post-preview">
+            
+                <% if @ticket.tickets_status %>
+                  <h2 class="post-title">Ticket Status: <span class='text-success'>Resovled</span></h2>
+                <% else %>
+                  <h2 class="post-title">Ticket Status: <span class='text-warning'>Open</span></h2>
+                <% end %>
+                
+            <h3 class="post-subtitle">
+              
+            </h3>
 
-
+              <% if @ticket.support_note  != nil %>
+              <p style="word-wrap: break-word;" class="post-meta">Support note: <%= word_wrap(@ticket.support_note, line_width: 8) %></p>
+              <% end %>
+        </div>
       </div>
      </div>
   </div>
