@@ -1,20 +1,32 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
-      <% @posts.each do |post| %>
+        <h1>Features</h1>
+        <hr>
         <div class="post-preview">
-          <a href="posts/<%= post.id %>">
             <h2 class="post-title">
-              <%= post.title %>
+                <i class="fa fa-ticket float-center" ></i> Ticketing Helpdesk
             </h2>
             <h3 class="post-subtitle">
-              <%= truncate(post.content) %>
+              
             </h3>
           </a>
-          <p class="post-meta">Posted by <%= post.name %> on <%= post.created_at.to_formatted_s(:long_ordinal) %></p>
+          <p class="post-meta">askIT&copy is simple to use and understand ticketing helpdesk</p>
         </div>
+
+        <div class="post-preview">
+            <h2 class="post-title">
+                <i class="fa fa-support float-center" ></i> Support Portal
+            </h2>
+            <h3 class="post-subtitle">
+              
+            </h3>
+          </a>
+          <p class="post-meta">The support portal give advanced tools to help customers resolve their problems</p>
+        </div>
+
         <hr>
-      <% end %>
+        
       <div class="clearfix">
         <a class="btn btn-primary float-right" href="#">TOP</a>
       </div>

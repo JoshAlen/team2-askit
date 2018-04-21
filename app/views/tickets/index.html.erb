@@ -1,0 +1,39 @@
+
+  <div class="container">
+
+      <p id="notice"><%= notice %></p>
+
+      <h1>Tickets <span><%= link_to 'New Ticket', new_ticket_path, class: "btn btn-danger float-right" %></span></h1> 
+      <hr>
+
+      <table id="example" class="display" style="width:100%">
+        <thead>
+          <tr>
+            <th>Ticket ID</th>
+            <th>Ticket Type</th>
+            <th>Ticket Description</th>
+            <th>Show</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @tickets.each do |ticket| %>
+            <tr>
+              <td><%= ticket.id %></td>
+              <td><%= ticket.ticket_type %></td>
+              <td><%= truncate(ticket.ticket_description) %></td>
+              <td><%= link_to ('<i class="fa fa-ticket"></i>').html_safe, ticket %></td>
+              <td><%= link_to ('<i class="fa fa-edit"></i>').html_safe, edit_ticket_path(ticket) %></td>
+              <td><%= link_to ('<i class="fa fa-trash"></i>').html_safe, ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+  </div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+      $('#example').DataTable();
+  } );
+</script>
