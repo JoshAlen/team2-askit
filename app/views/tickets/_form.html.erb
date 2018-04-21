@@ -1,27 +1,52 @@
-<%= form_with(model: ticket, local: true) do |form| %>
-  <% if ticket.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(ticket.errors.count, "error") %> prohibited this ticket from being saved:</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
 
-      <ul>
-      <% ticket.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <%= form_with(model: ticket, local: true) do |form| %>
+          <% if ticket.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(ticket.errors.count, "error") %> prohibited this ticket from being saved:</h2>
+
+              <ul>
+              <% ticket.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label><%= form.label :ticket_type %></label>
+            <%= form.text_field :ticket_type, id: :ticket_ticket_type, class: 'form-control', placeholder: 'Ticket Type' %>
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label><%= form.label :ticket_description %></label>
+            <%= form.text_area :ticket_description, id: :ticket_ticket_description, class: 'form-control', placeholder: 'Ticket Description', rows: 5  %>
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+
+        <% if current_user.email == "support@askit.com" %>             
+        <h4>Resolved <%= form.check_box :tickets_status %></h4>
+
+        <h2>Support Note</h2>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <%= form.text_area :support_note, id: :support_note, class: 'form-control', placeholder: 'Support Note', rows: 5  %>
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <% end %>
+
+        <div id="success" class="pt-1"></div>
+        <div class="form-group">
+          <%= form.submit(class: "btn btn-primary btn-block") %>
+        </div>
       <% end %>
-      </ul>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :ticket_type %>
-    <%= form.text_field :ticket_type, id: :ticket_ticket_type %>
   </div>
-
-  <div class="field">
-    <%= form.label :ticket_description %>
-    <%= form.text_field :ticket_description, id: :ticket_ticket_description %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+        <h1>Features</h1>
+        <hr>
+        <div class="post-preview">
+            <h2 class="post-title">
+                <i class="fa fa-ticket float-center" ></i> Ticketing Helpdesk
+            </h2>
+            <h3 class="post-subtitle">
+              
+            </h3>
+          </a>
+          <p class="post-meta">askIT&copy is simple to use and understand ticketing helpdesk</p>
+        </div>
+
+        <div class="post-preview">
+            <h2 class="post-title">
+                <i class="fa fa-support float-center" ></i> Support Portal
+            </h2>
+            <h3 class="post-subtitle">
+              
+            </h3>
+          </a>
+          <p class="post-meta">The support portal give advanced tools to help customers resolve their problems</p>
+        </div>
+        <div>
+        	<%= link_to('Create Account', new_user_registration_path, class: 'btn btn-primary')%>
+        	<%= link_to 'Create Ticket', new_ticket_path, class: "btn btn-light" %> 
+        	<%= link_to('View All Tickets', alltickets_path, class: 'btn btn-primary')%>
+        </div>
+        
+<!--       <div class="clearfix">
+        <a class="btn btn-primary float-right" href="#">TOP</a>
+      </div>
+ -->    </div>
+  </div>
+</div>

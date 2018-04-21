@@ -1,6 +1,14 @@
 class TicketsController < ApplicationController
   before_action :set_ticket, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:home, :alltickets]
+
+  def home
+
+  end
+
+  def alltickets
+    @tickets = Ticket.all
+  end
   # GET /tickets
   # GET /tickets.json
   def index
@@ -69,6 +77,6 @@ class TicketsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ticket_params
-      params.require(:ticket).permit(:ticket_type, :user_id, :ticket_description)
+      params.require(:ticket).permit(:ticket_type, :user_id, :ticket_description, :tickets_status, :support_note)
     end
 end

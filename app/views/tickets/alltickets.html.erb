@@ -1,9 +1,7 @@
-
   <div class="container">
 
       <p id="notice"><%= notice %></p>
-
-      <h1>Your Tickets <span><%= link_to 'New Ticket', new_ticket_path, class: "btn btn-danger float-right" %></span></h1> 
+          <h1>All Tickets</h1> 
       <hr>
 
       <table id="example" class="display" style="width:100%">
@@ -14,9 +12,10 @@
             <th>Ticket Description</th>
             <th>Ticket Date</th>
             <th>Ticket Status</th>
+            <% if current_user && current_user.email == "support@askit.com" %>
             <th>Show</th>
             <th>Edit</th>
-            <th>Delete</th>
+            <% end %>
           </tr>
         </thead>
         <tbody>
@@ -31,9 +30,10 @@
               <% else %>
               <td style="color:#ffc107;">Open</td>
               <% end %>
+              <% if current_user && current_user.email == "support@askit.com" %>
               <td><%= link_to ('<i class="fa fa-ticket"></i>').html_safe, ticket %></td>
               <td><%= link_to ('<i class="fa fa-edit"></i>').html_safe, edit_ticket_path(ticket) %></td>
-              <td><%= link_to ('<i class="fa fa-trash"></i>').html_safe, ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <% end %>
             </tr>
           <% end %>
         </tbody>

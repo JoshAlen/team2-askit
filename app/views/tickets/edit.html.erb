@@ -1,6 +1,25 @@
-<h1>Editing Ticket</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+		<h1>Editing Ticket</h1>
+    </div>
+  </div>
+</div>
+
 
 <%= render 'form', ticket: @ticket %>
 
-<%= link_to 'Show', @ticket %> |
-<%= link_to 'Back', tickets_path %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <% if current_user.email != "support@askit.com" %>
+    	 <%= link_to 'Show', @ticket %> |
+    	 <%= link_to 'Back', tickets_path %>
+      <% else %>
+       <%= link_to "Go Back", alltickets_path %>
+      <% end %>
+    </div>
+  </div>
+</div>

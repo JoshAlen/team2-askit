@@ -1,14 +1,36 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Ticket type:</strong>
-  <%= @ticket.ticket_type %>
-</p>
 
-<p>
-  <strong>Ticket description:</strong>
-  <%= @ticket.ticket_description %>
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+    		<p id="notice"><%= notice %></p>
+           <div class="post-preview">
+            <h2 class="post-title">
+                <%= @ticket.ticket_type %>
+            </h2>
+            <h3 class="post-subtitle">
+              
+            </h3>
+          </a>
+          <p style="word-wrap: break-word;" class="post-meta"> <%= word_wrap(@ticket.ticket_description, line_width: 8) %></p>
+        </div>
 
-<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
-<%= link_to 'Back', tickets_path %>
+
+      </div>
+     </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <% if current_user && current_user.email != "support@askit.com" %>
+		<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
+		<%= link_to 'Back', tickets_path %>
+      <% else %>
+      	<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
+       	<%= link_to "Go Back", alltickets_path %>
+      <% end %>
+    </div>
+  </div>
+</div>
