@@ -25,14 +25,23 @@
               <td><%= ticket.ticket_type %></td>
               <td><%= truncate(ticket.ticket_description) %></td>
               <td><%= ticket.created_at.to_formatted_s(:short) %></td>
-              <% if(ticket.tickets_status == true) %>
+              
+              <% if( ticket && ticket.tickets_status == true) %>
+
               <td style="color:#28a745;" >Resolved</td>
+              
               <% else %>
+
               <td style="color:#ffc107;">Open</td>
+
               <% end %>
+
               <% if current_user && current_user.email == "support@askit.com" %>
+              
               <td><%= link_to ('<i class="fa fa-ticket"></i>').html_safe, ticket %></td>
+              
               <td><%= link_to ('<i class="fa fa-edit"></i>').html_safe, edit_ticket_path(ticket) %></td>
+              
               <% end %>
             </tr>
           <% end %>
