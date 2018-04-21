@@ -31,15 +31,16 @@
         </div>
 
         <% if current_user.email == "support@askit.com" %>             
-        <h4>Resolved <%= form.check_box :tickets_status %></h4>
-
+        
         <h2>Support Note</h2>
         <div class="control-group">
           <div class="form-group floating-label-form-group controls">
-            <%= form.text_area :support_note, id: :support_note, class: 'form-control', placeholder: 'Support Note', rows: 5  %>
+            <%= form.text_area :support_note, id: :support_note, class: 'form-control', placeholder: 'add Support Note ...', rows: 5  %>
             <p class="help-block text-danger"></p>
           </div>
         </div>
+        <h4 class="text-success">Resolve <%= form.check_box :tickets_status %></h4>
+
         <% end %>
 
         <div id="success" class="pt-1"></div>
