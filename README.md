@@ -1,24 +1,25 @@
 # README
+**Team 2 Project Implementation**
 
-Team 2 Project Implementation
-
-* Ruby version
-Ruby version - 2.4
-
+* Ruby version - 2.4
+* Rails version - 5.1.5
+* Bootstrap version - 4.0
+* jQuery version - 3.3.1
 
 # Features
+**Ticketing Helpdesk**
 
-## Ticketing Helpdesk
-askIT is simple to use and understand ticketing helpdesk
+*askIT is simple to use and understand ticketing helpdesk*
 
-## Support Portal
-The support portal give advanced tools to help customers resolve their problems
+**Support Portal**
+
+*The support portal gives advanced tools to help customers resolve their problems*
 
 # Testing
+**Support User**
 
-## Support User
-Login Information - email: support@askit.com | password: guest1234
+*Login Information - email: support@askit.com | password: guest1234*
 
-## Client User
-Create new account - have fun testing our website
+**Client User**
 
+*Create new account - have fun testing our website*
