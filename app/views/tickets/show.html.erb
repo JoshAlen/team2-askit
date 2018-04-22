@@ -7,13 +7,13 @@
         
         <div class="post-preview">
             <h2 class="post-title">
-                Ticket Title: <%= @ticket.ticket_type %>
+               <%= @ticket.ticket_type %>
             </h2>
             <h3 class="post-subtitle">
               
             </h3>
           </a>
-          <p style="word-wrap: break-word;" class="post-meta">Ticket description: <%= word_wrap(@ticket.ticket_description, line_width: 8) %></p>
+          <p style="word-wrap: break-word;" class="post-meta"><%= word_wrap(@ticket.ticket_description, line_width: 8) %></p>
         </div>
         <div class="post-preview">
             

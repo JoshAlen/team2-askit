@@ -22,7 +22,7 @@
           <% @tickets.each do |ticket| %>
             <tr>
               <td><%= ticket.id %></td>
-              <td><%= ticket.ticket_type %></td>
+              <td><%= truncate(ticket.ticket_type) %></td>
               <td><%= truncate(ticket.ticket_description) %></td>
               <td><%= ticket.created_at.to_formatted_s(:short) %></td>
               
