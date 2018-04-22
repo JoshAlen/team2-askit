@@ -12,6 +12,7 @@
 
 	  def send_ticket_notice(ticket)
 	  	@user = ticket.user
+	  	@ticket = ticket
 	  	mail( :to => @user.email,
 	  	:subject => 'Resolved Ticket' )
 	  end
