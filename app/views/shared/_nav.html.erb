@@ -15,9 +15,11 @@
         <li class="nav-item">
           <%= link_to 'Home', root_path, class: 'nav-link' %>
         </li>
+        
         <li class="nav-item">
           <%= link_to('View All Tickets', alltickets_path, class: 'nav-link')%>
         </li>
+
         <% if user_signed_in? %>
           <% if current_user.email != "support@askit.com" %>
           <li class="nav-item">
