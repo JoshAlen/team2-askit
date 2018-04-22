@@ -6,19 +6,19 @@ Team 2 Project Implementation
 Ruby version - 2.4
 
 
-#Features
+# Features
 
-##Ticketing Helpdesk
+## Ticketing Helpdesk
 askIT is simple to use and understand ticketing helpdesk
 
-##Support Portal
+## Support Portal
 The support portal give advanced tools to help customers resolve their problems
 
-#Testing
+# Testing
 
-##Support User
+## Support User
 Login Information - email: support@askit.com | password: guest1234
 
-##Client User
+## Client User
 Create new account - have fun testing our website
 
