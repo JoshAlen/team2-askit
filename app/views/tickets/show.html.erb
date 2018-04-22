@@ -9,8 +9,8 @@
             <h2 class="post-title">
                <%= @ticket.ticket_type %>
             </h2>
-            <h3 class="post-subtitle">
-              
+            <h3 class="post-subtitle text-info">
+              <%= @ticket.created_at.to_formatted_s(:short) %>
             </h3>
           </a>
           <p style="word-wrap: break-word;" class="post-meta"><%= word_wrap(@ticket.ticket_description, line_width: 8) %></p>
