@@ -1,24 +1,24 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+Team 2 Project Implementation
 
 * Ruby version
+Ruby version - 2.4
 
-* System dependencies
 
-* Configuration
+#Features
 
-* Database creation
+##Ticketing Helpdesk
+askIT is simple to use and understand ticketing helpdesk
 
-* Database initialization
+##Support Portal
+The support portal give advanced tools to help customers resolve their problems
 
-* How to run the test suite
+#Testing
 
-* Services (job queues, cache servers, search engines, etc.)
+##Support User
+Login Information - email: support@askit.com | password: guest1234
 
-* Deployment instructions
+##Client User
+Create new account - have fun testing our website
 
-* ...
