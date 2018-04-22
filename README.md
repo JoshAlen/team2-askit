@@ -1,10 +1,15 @@
 # README
-**Team 2 Project Implementation**
+**Team 2 Project Implementation - Simple web-based helpdesk application**
 
 * Ruby version - 2.4
 * Rails version - 5.1.5
 * Bootstrap version - 4.0
 * jQuery version - 3.3.1
+
+
+# Live Demo
+
+There is a live demo with fake data available at https://askit-team2.herokuapp.com
 
 # Features
 **Ticketing Helpdesk**
@@ -23,3 +28,6 @@
 **Client User**
 
 *Create new account - have fun testing our website*
+
+# License
+MIT open source license
