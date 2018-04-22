@@ -1,4 +1,4 @@
-class UserNotifier < ApplicationMailer
+
 
 	class UserNotifier < ActionMailer::Base
 	  default :from => 'support@askIT.com'
@@ -9,6 +9,7 @@ class UserNotifier < ApplicationMailer
 	    mail( :to => @user.email,
 	    :subject => 'Thanks for signing up for our amazing app' )
 	  end
+
 	end
 
-end
+
