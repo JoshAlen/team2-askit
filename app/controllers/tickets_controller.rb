@@ -36,6 +36,8 @@ class TicketsController < ApplicationController
     @ticket.user = current_user
     respond_to do |format|
       if @ticket.save
+        @user = current_user
+        UserNotifier.send_signup_email(@user).deliver
         format.html { redirect_to @ticket, notice: 'Ticket was successfully created.' }
         format.json { render :show, status: :created, location: @ticket }
       else
