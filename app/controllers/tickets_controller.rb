@@ -50,8 +50,14 @@ class TicketsController < ApplicationController
   # PATCH/PUT /tickets/1
   # PATCH/PUT /tickets/1.json
   def update
+
     respond_to do |format|
       if @ticket.update(ticket_params)
+
+        if (@ticket && @ticket.tickets_status)
+          UserNotifier.send_ticket_notice(@ticket).deliver
+        end
+        
         format.html { redirect_to @ticket, notice: 'Ticket was successfully updated.' }
         format.json { render :show, status: :ok, location: @ticket }
       else

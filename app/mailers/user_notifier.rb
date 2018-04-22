@@ -7,9 +7,14 @@
 	  def send_signup_email(user)
 	    @user = user
 	    mail( :to => @user.email,
-	    :subject => 'Thanks for signing up for our amazing app' )
+	    :subject => 'New Ticket' )
 	  end
 
+	  def send_ticket_notice(ticket)
+	  	@user = ticket.user
+	  	mail( :to => @user.email,
+	  	:subject => 'Resolved Ticket' )
+	  end
 	end
 
 
