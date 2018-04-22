@@ -15,8 +15,22 @@
   </head>
   <body>
   	<%= render 'shared/nav' %>
-  	<%= render 'shared/masthead' %>
-    <%= yield %>
+
+    <% if current_page?('/') %>
+  	 <%= render 'shared/masthead' %>
+    <% end %>
+    
+
+      <% if current_page?('/') %>
+        <%= yield %>
+      <% else %>
+        <div class="pt-5 mt-3">
+          <%= yield %>
+        </div>
+      <% end %>
+   
+   
+    
     <hr>
     <%= render 'shared/footer' %>
   </body>
