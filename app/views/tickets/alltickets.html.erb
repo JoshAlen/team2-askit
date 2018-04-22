@@ -12,9 +12,9 @@
             <th>Ticket Description</th>
             <th>Ticket Date</th>
             <th>Ticket Status</th>
-            <% if current_user && current_user.email == "support@askit.com" %>
             <th>Ticket Information</th>
-            <th>Provide Support</th>
+            <% if current_user && current_user.email == "support@askit.com" %>
+              <th>Provide Support</th>
             <% end %>
           </tr>
         </thead>
@@ -36,13 +36,14 @@
 
               <% end %>
 
-              <% if current_user && current_user.email == "support@askit.com" %>
-              
               <td><%= link_to ('<i class="fa fa-ticket"></i>').html_safe, ticket %></td>
               
-              <td><%= link_to ('<i class="fa fa-edit"></i>').html_safe, edit_ticket_path(ticket) %></td>
+              <% if current_user && current_user.email == "support@askit.com" %>
+              
+                <td><%= link_to ('<i class="fa fa-edit"></i>').html_safe, edit_ticket_path(ticket) %></td>
               
               <% end %>
+            
             </tr>
           <% end %>
         </tbody>

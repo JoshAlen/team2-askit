@@ -39,12 +39,18 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
-      <% if current_user && current_user.email != "support@askit.com" %>
-		<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
-		<%= link_to 'Back', tickets_path %>
+      <% if current_user && current_user.email == "support@askit.com" %>
+    		  <%= link_to 'Provide Support', edit_ticket_path(@ticket) %> |
+          <%= link_to "Go Back", alltickets_path %>
       <% else %>
-      	<%= link_to 'Provide Support', edit_ticket_path(@ticket) %> |
-       	<%= link_to "Go Back", alltickets_path %>
+
+          <%= link_to 'All Tickets', alltickets_path %> |
+
+          <% if current_user %>
+            <%= link_to 'Your Tickets', tickets_path %>
+          <% else %>
+            <%= link_to('Create Account', new_user_registration_path)%>
+          <% end %> 
       <% end %>
     </div>
   </div>
