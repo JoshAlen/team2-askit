@@ -1,7 +1,7 @@
 # README
 **Team 2 Project Implementation - Simple web-based helpdesk application**
 
-#Installation
+# Installation
 
 Requirements are:
 
